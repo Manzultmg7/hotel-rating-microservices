@@ -2,6 +2,8 @@ server:
   port: 8083
 
 spring:
+  config:
+    import: optional:configserver:http://localhost:8085
   application:
     name: Rating-Service
   datasource:
@@ -15,12 +17,13 @@ spring:
       ddl-auto: update
     show-sql: true
 
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    fetch-registry: true
-    register-with-eureka: true
-    service-url:
-      defaultZone: http://localhost:8090/eureka
-
+#
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    fetch-registry: true
+#    register-with-eureka: true
+#    service-url:
+#      defaultZone: http://localhost:8090/eureka
+#
